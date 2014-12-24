@@ -2,7 +2,8 @@
 # Duplicate Figure 3.5 (all possible subset models) from the book 
 # 
 
-X  = read.table("../../Data/prostate.data")
+# X  = read.table("../../Data/prostate.data")
+X  = read.table("prostate.data")
 XTraining = subset( X, train )
 XTesting  = subset( X, train==FALSE )
 
@@ -57,7 +58,7 @@ for( k in 1:p ){ # k=0 needs to be done outside of this loop
   }
 }
 
-postscript("../../WriteUp/Graphics/Chapter3/fig_3_5_dup.eps", onefile=FALSE, horizontal=FALSE)
+#---postscript("../../WriteUp/Graphics/Chapter3/fig_3_5_dup.eps", onefile=FALSE, horizontal=FALSE)
 
 plot(xPlot,yPlot,xlab="Subset Size k",ylab="Residual Sum-of-Squares",ylim=c(0,100),xlim=c(0,8))
 
@@ -67,9 +68,10 @@ for ( ki in 1:p ){
   rmin = min(yPlot[inds])
   xMinPlot = c(xMinPlot,ki); yMinPlot = c(yMinPlot,rmin)
 }
-lines(xMinPlot,yMinPlot)
+# lines(xMinPlot,yMinPlot)
+lines(xMinPlot,yMinPlot, col="red")
 
-dev.off()
+#---dev.off()
 
 
 
