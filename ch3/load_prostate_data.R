@@ -17,8 +17,8 @@ load_prostate_data <- function(globalScale=FALSE,trainingScale=TRUE,responseScal
   # 
   #-----
 
-  X  = read.table("../../Data/prostate.data")
-  
+#  X  = read.table("../../Data/prostate.data")
+  X  = read.table("prostate.data")
   #
   # Based on the comments in the file prostate.info we try to scale ALL
   # features so that they have mean one and standard deviation of one.
